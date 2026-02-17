@@ -11,6 +11,8 @@ const createProductCard = (product) => {
                 <img src="${product.image}" class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-500">
                 <span class="absolute top-2 right-2 badge badge-ghost text-[10px] font-bold uppercase">${product.category}</span>
             </div>
+
+            
             <div class="flex-grow text-left">
                 <div class="flex justify-between items-center mb-2">
                     <span class="text-yellow-600 font-bold text-sm"><i class="fa-solid fa-star"></i> ${product.rating.rate}</span>
