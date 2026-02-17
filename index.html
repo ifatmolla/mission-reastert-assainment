@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SwiftCart | Premium Shopping</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.4.19/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        .hero-section {
+            background: linear-gradient(rgba(15, 23, 42, 0.7), rgba(15, 23, 42, 0.7)),
+                url('https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?q=80&w=2070&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+        }
+    </style>
+</head>
+
+<body class="font-sans bg-slate-50 text-slate-900">
+
+    <nav class="glass-nav py-4 fixed top-0 w-full z-50 shadow-sm border-b border-slate-200">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <div class="bg-yellow-400 p-2 rounded-lg text-black">
+                    <i class="fa-solid fa-bolt-lightning text-xl"></i>
+                </div>
+                <h1 class="text-2xl font-black tracking-tighter">SWIFT<span class="text-yellow-500">CART</span></h1>
+            </div>
+            <ul class="hidden md:flex items-center gap-8 font-semibold text-slate-600">
+                <li class="hover:text-yellow-600 cursor-pointer">Home</li>
+                <li class="hover:text-yellow-600 cursor-pointer">Products</li>
+                <li class="hover:text-yellow-600 cursor-pointer">About</li>
+            </ul>
+            <div class="flex items-center gap-5">
+                <div class="indicator cursor-pointer">
+                    <span class="indicator-item badge badge-secondary badge-sm text-white">0</span>
+                    <i class="fa-solid fa-cart-shopping text-xl"></i>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-16">
+        <section class="hero-section h-[80vh] flex items-center justify-center text-center px-4">
+            <div class="container mx-auto">
+                <h1 class="text-white text-5xl md:text-7xl font-black mb-6">Elevate Your <span
+                        class="text-yellow-400">Lifestyle</span></h1>
+                <p class="text-gray-300 text-lg max-w-2xl mx-auto mb-10">এক্সক্লুসিভ ফ্যাশন এবং লেটেস্ট টেকনোলজির সেরা
+                    কালেকশন।</p>
+                <button class="btn btn-warning btn-lg rounded-full px-12 font-bold">Shop Now</button>
+            </div>
+        </section>
+
+        <section class="py-24 container mx-auto px-6">
+            <div class="mb-12">
+                <h2 class="text-sm font-bold text-yellow-500 uppercase tracking-widest italic">Customer Favorites</h2>
+                <h3 class="text-4xl font-black">Trending <span class="text-yellow-500">Products</span></h3>
+            </div>
+            <div id="trending-container" class="grid grid-cols-1 md:grid-cols-3 gap-10">
+            </div>
+        </section>
+
+        <section class="py-20 bg-white shadow-inner">
+            <div class="container mx-auto px-6 text-center">
+                <h3 class="text-3xl font-black mb-10">Shop By <span class="text-yellow-500">Category</span></h3>
+                <div id="category-list" class="flex flex-wrap justify-center gap-4 mb-16">
+                </div>
+                <div id="all-products-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <input type="checkbox" id="details-modal" class="modal-toggle" />
+    <div class="modal" role="dialog">
+        <div class="modal-box max-w-3xl rounded-3xl p-0 overflow-hidden relative" id="modal-content">
+        </div>
+        <label class="modal-backdrop" for="details-modal">Close</label>
+    </div>
+
+    <footer class="bg-slate-900 text-slate-300 pt-16 pb-8">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+
+                <div class="space-y-6">
+                    <div class="flex items-center gap-2">
+                        <div class="bg-yellow-400 p-2 rounded-lg text-black">
+                            <i class="fa-solid fa-bolt-lightning text-xl"></i>
+                        </div>
+                        <h2 class="text-2xl font-black tracking-tighter text-white">SWIFT<span
+                                class="text-yellow-500">CART</span></h2>
+                    </div>
+                    <p class="text-sm leading-relaxed opacity-70">
+                        আমরা দিচ্ছি প্রিমিয়াম কোয়ালিটি পণ্য এবং দ্রুততম ডেলিভারি সেবা। আপনার শপিং অভিজ্ঞতাকে সহজ এবং
+                        আনন্দদায়ক করাই আমাদের লক্ষ্য।
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-yellow-500 hover:text-black transition-all duration-300">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-yellow-500 hover:text-black transition-all duration-300">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-yellow-500 hover:text-black transition-all duration-300">
+                            <i class="fa-brands fa-x-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="text-white font-bold text-lg mb-6">Quick Links</h3>
+                    <ul class="space-y-4 text-sm">
+                        <li><a href="#" class="hover:text-yellow-400 transition-colors flex items-center gap-2"><i
+                                    class="fa-solid fa-chevron-right text-[10px]"></i> Home</a></li>
+                        <li><a href="#" class="hover:text-yellow-400 transition-colors flex items-center gap-2"><i
+                                    class="fa-solid fa-chevron-right text-[10px]"></i> Shop All Products</a></li>
+                        <li><a href="#" class="hover:text-yellow-400 transition-colors flex items-center gap-2"><i
+                                    class="fa-solid fa-chevron-right text-[10px]"></i> About SwiftCart</a></li>
+                        <li><a href="#" class="hover:text-yellow-400 transition-colors flex items-center gap-2"><i
+                                    class="fa-solid fa-chevron-right text-[10px]"></i> Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-white font-bold text-lg mb-6">Customer Service</h3>
+                    <ul class="space-y-4 text-sm">
+                        <li><a href="#" class="hover:text-yellow-400 transition-colors">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-yellow-400 transition-colors">Terms & Conditions</a></li>
+                        <li><a href="#" class="hover:text-yellow-400 transition-colors">Refund Policy</a></li>
+                        <li><a href="#" class="hover:text-yellow-400 transition-colors">Order Tracking</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-white font-bold text-lg mb-6">Join Our Newsletter</h3>
+                    <p class="text-sm opacity-70 mb-4">সেরা অফার এবং নতুন কালেকশনের আপডেট পেতে সাবস্ক্রাইব করুন।</p>
+                    <form class="flex flex-col gap-3">
+                        <input type="email" placeholder="Email Address"
+                            class="input input-bordered bg-slate-800 border-slate-700 text-white w-full focus:border-yellow-500 rounded-lg" />
+                        <button class="btn btn-warning w-full rounded-lg font-bold border-none">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="h-px bg-slate-800 w-full mb-8"></div>
+
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                <p class="text-xs opacity-50">
+                    &copy; 2026 SwiftCart Inc. All rights reserved. Built with ❤️ for your lifestyle.
+                </p>
+                <div class="flex gap-4 grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all">
+                    <i class="fa-brands fa-cc-visa text-3xl"></i>
+                    <i class="fa-brands fa-cc-mastercard text-3xl"></i>
+                    <i class="fa-brands fa-cc-paypal text-3xl"></i>
+                    <i class="fa-brands fa-cc-apple-pay text-3xl"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="index.js"></script>
+</body>
+
+</html>
